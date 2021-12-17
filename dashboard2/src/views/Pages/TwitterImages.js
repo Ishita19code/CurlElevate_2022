@@ -13,6 +13,13 @@ import Timeline from "@material-ui/icons/Timeline";
 import Heading from "components/Heading/Heading.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
+import Tooltip from "@material-ui/core/Tooltip";
+import Button from "components/CustomButtons/Button.js";
+import ArtTrack from "@material-ui/icons/ArtTrack";
+import Refresh from "@material-ui/icons/Refresh";
+import Edit from "@material-ui/icons/Edit";
+import Icon from "@material-ui/core/Icon";
+import Close from "@material-ui/icons/Close";
 
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -38,7 +45,8 @@ import {
   pieChart,
 } from "variables/charts.js";
 
-import styles from "assets/jss/material-dashboard-pro-react/views/chartsStyle.js";
+// import styles from "assets/jss/material-dashboard-pro-react/views/chartsStyle.js";
+import styles from "assets/jss/material-dashboard-pro-react/views/dashboardStyle.js"
 
 const useStyles = makeStyles(styles);
 
@@ -58,32 +66,131 @@ export default function TwitterImages() {
       />
       <GridContainer>
         <GridItem xs={12} sm={12} md={4}>
-          <Card>
+        <Card product className={classes.cardHover}>
+            <CardHeader image className={classes.cardHeaderHover}>
+                <img src={Image2} alt="..." width="200" height="200" />
+            </CardHeader>
+            <CardBody>
+              <div className={classes.cardHoverUnder}>
+                <Tooltip
+                  id="tooltip-top"
+                  title="View"
+                  placement="bottom"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button color="transparent" simple justIcon>
+                    <ArtTrack className={classes.underChartIcons} />
+                  </Button>
+                </Tooltip>
+                {/* <Tooltip
+                  id="tooltip-top"
+                  title="Edit"
+                  placement="bottom"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button color="success" simple justIcon>
+                    <Refresh className={classes.underChartIcons} />
+                  </Button>
+                </Tooltip> */}
+                <Tooltip
+                  id="tooltip-top"
+                  title="Remove"
+                  placement="bottom"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button color="danger" simple justIcon>
+                    <Close className={classes.underChartIcons} />
+                  </Button>
+                </Tooltip>
+              </div>
+              {/* <h4 className={classes.cardProductTitle}>
+                  Name of the Image
+              </h4>
+              <p className={classes.cardProductDesciprion}>
+                Description of the image
+              </p> */}
+            </CardBody>
+            {/* <CardFooter product>
+              <div
+                className={classes.price}
+                style={{ display: "flex", flexDirection: "row" }}
+              >
+                <Icon>local_offer</Icon>
+                <h4>Current Price</h4>
+              </div>
+              <div className={`${classes.stats} ${classes.productStats}`}>
+                <Place /> Barcelona, Spain
+              </div>
+            </CardFooter> */}
+          </Card>
+          {/* <Card>
             <CardHeader image>
                 <img src={Image1} alt="..." width="200" height="200"/>
             </CardHeader>
             <CardBody>
               <h4 className={classes.cardTitle} style={{ textAlign: "center"}}>Name of the image</h4>
             </CardBody>
-          </Card>
+          </Card> */}
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-          <Card>
-            <CardHeader image>
-                <img src={Image2} alt="..." width="200" height="200"/>
+        <Card product className={classes.cardHover}>
+            <CardHeader image className={classes.cardHeaderHover}>
+                <img src={Image2} alt="..." width="200" height="200" />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle} style={{ display:"flex", justifyContent:"center"}}>Name of the image</h4>
+              <div className={classes.cardHoverUnder}>
+                <Tooltip
+                  id="tooltip-top"
+                  title="View"
+                  placement="bottom"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button color="transparent" simple justIcon>
+                    <ArtTrack className={classes.underChartIcons} />
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  id="tooltip-top"
+                  title="Remove"
+                  placement="bottom"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button color="danger" simple justIcon>
+                    <Close className={classes.underChartIcons} />
+                  </Button>
+                </Tooltip>
+              </div>
             </CardBody>
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-          <Card>
-            <CardHeader image>
-                <img src={Image3} alt="..." width="200" height="200"/>
+        <Card product className={classes.cardHover}>
+            <CardHeader image className={classes.cardHeaderHover}>
+                <img src={Image2} alt="..." width="200" height="200" />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle} style={{ display:"flex", justifyContent:"center"}}>Name of the image</h4>
+              <div className={classes.cardHoverUnder}>
+                <Tooltip
+                  id="tooltip-top"
+                  title="View"
+                  placement="bottom"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button color="transparent" simple justIcon>
+                    <ArtTrack className={classes.underChartIcons} />
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  id="tooltip-top"
+                  title="Remove"
+                  placement="bottom"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button color="danger" simple justIcon>
+                    <Close className={classes.underChartIcons} />
+                  </Button>
+                </Tooltip>
+              </div>
             </CardBody>
           </Card>
         </GridItem>
